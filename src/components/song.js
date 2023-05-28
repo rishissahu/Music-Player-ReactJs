@@ -2,7 +2,7 @@ import React from "react";
 
 
 const Song = (currentSong) => {
-    console.log(currentSong)
+    // console.log(currentSong)
     return (
         <div className="song-container">
             <img src={currentSong.song.artwork} alt="" />
