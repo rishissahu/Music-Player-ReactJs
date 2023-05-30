@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight, faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 
-const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
+const Player = ({ currentSong, isPlaying, setIsPlaying, setCurrentSong}) => {
 
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
@@ -45,7 +45,9 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
       currentTime: e.target.value
     })
   }
-
+  const changeSong =()=>{
+    setCurrentSong();
+  }
   return (
     <div className="player">
       <div className="time-controller">
