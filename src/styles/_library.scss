@@ -11,7 +11,9 @@
         font-weight: bolder ;
     }
 }
-
+.library:hover {
+  cursor: pointer;
+}
 .lib-song-container{
     display: flex;
     padding: 1.5rem;
