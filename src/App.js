@@ -14,9 +14,9 @@ function App() {
     <div className="App">
       <Song song={currentSong}/>
       <Player currentSong={currentSong} isPlaying={isPlaying} setIsPlaying={setIsPlaying} setCurrentSong={setCurrentSong} />
-      <Library songs={songs} currentSong={currentSong} setCurrentSong={setCurrentSong} />
+      <Library songs={songs} currentSong={currentSong} setCurrentSong={setCurrentSong} setSongs={setSongs}/>
     </div>
   );
 }
 
-export default App;
+export default App; 

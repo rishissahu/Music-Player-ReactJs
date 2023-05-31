@@ -8,7 +8,7 @@ function songLink() {
             "artwork": "https://samplesongs.netlify.app/album-arts/death-bed.jpg",
             "url": "https://samplesongs.netlify.app/Death%20Bed.mp3",
             "id": uuidv4(),
-            "active": true
+            "active": false
         },
         {
             "title": "Bad Liar",
