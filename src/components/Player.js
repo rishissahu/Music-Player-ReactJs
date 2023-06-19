@@ -1,25 +1,25 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight, faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 
-const Player = ({ currentSong, isPlaying, setIsPlaying, setCurrentSong}) => {
+const Player = ({ songs, currentSong, isPlaying, setIsPlaying, setCurrentSong, handlePlayPause, audioRef}) => {
 
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0
   })
 
-  // Play and pause the song 
-  const audioRef = useRef(null);
-  const handlePlayPause = () => {
-    if (!isPlaying) {
-      audioRef.current.play();
-      setIsPlaying(true)
-    } else {
-      audioRef.current.pause();
-      setIsPlaying(false)
-    }
-  };
+  // // Play and pause the song 
+  // const audioRef = useRef(null);
+  // const handlePlayPause = () => {
+  //   if (!isPlaying) {
+  //     audioRef.current.play();
+  //     setIsPlaying(true)
+  //   } else {
+  //     audioRef.current.pause();
+  //     setIsPlaying(false)
+  //   }
+  // };
 
   // Updateing the current time and setting the duration of song
   const updateTime = (e) => {
@@ -45,8 +45,13 @@ const Player = ({ currentSong, isPlaying, setIsPlaying, setCurrentSong}) => {
       currentTime: e.target.value
     })
   }
-  const changeSong =()=>{
-    setCurrentSong();
+  const changeSong =(direction)=>{
+    if(direction==next){
+      setCurrentSong(songs[index+1]);
+    }
+    else{
+      setCurrentSong(songs[index-1])
+    }
   }
   return (
     <div className="player">
